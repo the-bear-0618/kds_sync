@@ -1,0 +1,16 @@
+{
+  "name": "kds-sync",
+  "version": "1.0.0",
+  "description": "Sync KDS metrics from Supabase to Airtable",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
