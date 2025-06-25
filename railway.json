@@ -4,6 +4,6 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "cronSchedule": "*/5 * * * *"
+    "cronSchedule": "*/15 * * * *"
   }
 }
