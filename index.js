@@ -1,10 +1,8 @@
 import fetch from 'node-fetch';
 
-// Get environment variables
 const SUPABASE_PROJECT_ID = process.env.SUPABASE_PROJECT_ID;
 const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY;
 
-// Validate environment variables
 if (!SUPABASE_PROJECT_ID || !SUPABASE_ANON_KEY) {
   console.error('ERROR: Missing required environment variables');
   console.error('Please set SUPABASE_PROJECT_ID and SUPABASE_ANON_KEY');
@@ -12,7 +10,8 @@ if (!SUPABASE_PROJECT_ID || !SUPABASE_ANON_KEY) {
 }
 
 async function syncKDSToAirtable() {
-  const url = `https://${SUPABASE_PROJECT_ID}.supabase.co/functions/v1/sync-kds-to-airtable`;
+  // Use the actual endpoint name
+  const url = `https://${SUPABASE_PROJECT_ID}.supabase.co/functions/v1/supabase-functions-deploy-kds-webhook`;
   
   console.log(`[${new Date().toISOString()}] Starting KDS to Airtable sync...`);
   console.log(`URL: ${url}`);
@@ -33,7 +32,6 @@ async function syncKDSToAirtable() {
       throw new Error(`HTTP ${response.status}: ${responseText}`);
     }
 
-    // Try to parse as JSON, but handle plain text responses too
     let data;
     try {
       data = JSON.parse(responseText);
